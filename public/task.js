@@ -1,4 +1,4 @@
- const BASE_URL = "https://taskapp-laravel.onrender.com/";
+ const BASE_URL = "https://taskapp-laravel.onrender.com/api";
 
     let editingTaskId = null;
 

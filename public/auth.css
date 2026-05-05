@@ -7,7 +7,7 @@
 
 body {
   height: 100vh;
-  background: url('http://localhost/projects/TaskApp/public/image/bgImage.png') no-repeat center center;
+  background: url('/image/bgImage.png') no-repeat center center;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -156,7 +156,7 @@ button:hover {
   }
 
   body{
-      background: url('http://localhost/projects/TaskApp/public/image/mbgImage.png') no-repeat center center;
+      background: url('/image/mbgImage.png') no-repeat center center;
       background-size: cover;
   }
 }
