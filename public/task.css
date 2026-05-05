@@ -7,8 +7,7 @@
       position: relative;
       overflow-x: hidden;
     }
- 
-    /* ── Background orbs ── */
+
     .orb {
       position: fixed;
       border-radius: 50%;
@@ -19,7 +18,7 @@
     .o2 { width: 280px; height: 280px; background: rgba(255,255,255,0.05); bottom: -80px; left: -60px; }
     .o3 { width: 180px; height: 180px; background: rgba(255,255,255,0.06); top: 320px; right: 60px; }
  
-    /* ── Top bar ── */
+
     .topbar {
       display: flex;
       align-items: center;
@@ -76,7 +75,7 @@
     }
     .btn-logout:hover { background: rgba(255,255,255,0.28); }
  
-    /* ── Main layout ── */
+
     .main {
       max-width: 680px;
       margin: 0 auto;
@@ -85,7 +84,6 @@
       z-index: 3;
     }
  
-    /* ── Glass card base ── */
     .glass {
       background: rgba(255,255,255,0.13);
       border: 1px solid rgba(255,255,255,0.22);
@@ -94,7 +92,7 @@
       -webkit-backdrop-filter: blur(18px);
     }
  
-    /* ── Dashboard card ── */
+
     .dash-card { padding: 22px; margin-bottom: 14px; }
     .dash-top {
       display: flex;
@@ -124,7 +122,7 @@
     .stat.highlight .stat-num { color: #7ffce0; }
     .stat.highlight .stat-lbl { color: rgba(127,252,224,0.7); }
  
-    /* ── Create task card ── */
+
     .create-card { padding: 20px 20px 18px; margin-bottom: 14px; }
     .card-label {
       font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.6);
@@ -179,7 +177,6 @@
     .btn-add:active { transform: scale(0.97); }
     .btn-add .plus { font-size: 20px; font-weight: 700; line-height: 1; }
  
-    /* ── Your tasks card ── */
     .tasks-card { padding: 20px; margin-bottom: 0; }
     .tasks-header {
       display: flex; align-items: center; justify-content: space-between;
@@ -199,7 +196,6 @@
     }
     .btn-refresh:hover { background: rgba(255,255,255,0.22); color: #fff; }
  
-    /* ── Task items ── */
     .task-list { display: flex; flex-direction: column; gap: 8px; }
  
     .task-item {
@@ -258,7 +254,6 @@
     }
     .empty-icon { font-size: 30px; margin-bottom: 10px; }
  
-    /* ── Games card ── */
     .games-card {
       padding: 18px 20px;
       margin-top: 14px;
@@ -290,11 +285,11 @@
     .btn-play:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(120,60,200,0.5); }
     .btn-play:active { transform: scale(0.97); }
  
-    /* ── Spinner ── */
+
     @keyframes spin { to { transform: rotate(360deg); } }
     .spinning { animation: spin 0.5s linear; display: inline-block; }
 
-     /* ── Edit Modal ─────────────────────────────────── */
+
       .modal-overlay {
         display: none;
         position: fixed;
@@ -376,7 +371,6 @@
       }
       .btn-save:hover { opacity:.88; transform: translateY(-1px); }
 
-      /* ── Edit button on each task row ───────────────── */
       .edit-btn {
         background: rgba(255,255,255,0.10);
         border: 1px solid rgba(255,255,255,0.18);

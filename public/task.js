@@ -2,7 +2,6 @@
 
     let editingTaskId = null;
 
-    /* shared header helpers */
     const AUTH      = () => ({ "Authorization": "Bearer " + localStorage.getItem("token") });
     const AUTH_JSON = () => ({ ...AUTH(), "Content-Type": "application/json" });
 
@@ -15,9 +14,7 @@
       getTasks();
     };
 
-    /* ═══════════════════════════════════════════
-       USER PROFILE — GET /api/task/user
-    ═══════════════════════════════════════════ */
+   
     async function getUserProfile() {
       try {
         const res = await fetch(BASE_URL + '/task/user', {
@@ -26,7 +23,6 @@
         });
         const data = await res.json();
         
-        // Assuming the API returns the name in data.name (adjust if it's e.g. data.user.name)
         const fullName = data.user; 
         const nameParts = fullName.trim().split(" ");
         
@@ -34,24 +30,18 @@
         
 
         if (nameParts.length >= 2) {
-          // First letter of first name + First letter of last name
           initials = nameParts[0][0].toUpperCase() + nameParts[nameParts.length - 1][0].toUpperCase();
         } else if (nameParts.length === 1 && nameParts[0] !== "") {
-          // Just first letter of the name
           initials = nameParts[0][0].toUpperCase();
         }
 
-        // Update the avatar div
         document.getElementById('avatar').innerText = initials;
-        document.getElementById('dash-greeting').innerHTML = fullName;
+        document.getElementById('dash-greeting').innerHTML = `Good morning, ${fullName} 👋`;
       } catch (err) {
         console.error("Failed to fetch user profile:", err);
       }
     }
 
-    /* ═══════════════════════════════════════════
-       CREATE — POST /api/task  { title }
-    ═══════════════════════════════════════════ */
     async function createTask() {
       const titleEl = document.getElementById("title");
       const title   = titleEl.value.trim();
@@ -73,9 +63,7 @@
       }
     }
 
-    /* ═══════════════════════════════════════════
-       READ — GET /api/task
-    ═══════════════════════════════════════════ */
+
     async function getTasks() {
       if (!localStorage.getItem("token")) {
         window.location.href = "index.html";
@@ -133,9 +121,6 @@
       });
     }
 
-    /* ═══════════════════════════════════════════
-       COMPLETE — POST /api/task/:id
-    ═══════════════════════════════════════════ */
     async function completeTask(id) {
       try {
         await fetch(BASE_URL + '/task/' + id, {
@@ -148,9 +133,6 @@
       }
     }
 
-    /* ═══════════════════════════════════════════
-       EDIT MODAL
-    ═══════════════════════════════════════════ */
     function openEditModal(id, currentTitle) {
       editingTaskId = id;
       document.getElementById('edit-title-input').value = currentTitle;
@@ -164,7 +146,6 @@
       editingTaskId = null;
     }
 
-    /* UPDATE — PUT /api/task/:id  { title } */
     async function saveEdit() {
       const newTitle = document.getElementById('edit-title-input').value.trim();
       if (!newTitle) { alert("Title cannot be empty."); return; }
@@ -203,17 +184,12 @@
       }
     }
 
-    /* ═══════════════════════════════════════════
-       LOGOUT
-    ═══════════════════════════════════════════ */
     function logout() {
       localStorage.removeItem("token");
       window.location.href = "index.html";
     }
 
-    /* ═══════════════════════════════════════════
-       HELPERS – prevent XSS
-    ═══════════════════════════════════════════ */
+
     function escapeHTML(str) {
       return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
     }
