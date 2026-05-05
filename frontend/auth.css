@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: url('http://localhost/projects/TaskApp/public/image/bgImage.png') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.2);
+  backdrop-filter: blur(5px);
+}
+
+/* Container */
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Glass Card */
+.login-card {
+  position: relative;
+  max-width: 400px;
+  width:90%;
+  padding: 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.418);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  text-align: center;
+  z-index: 1;
+}
+
+a{
+    color: #087083; 
+    font-weight: 500; 
+    font-size: 15px;
+    text-decoration: none;
+}
+
+/* Headings */
+.login-card h1 {
+  color: #087083;
+  margin-bottom: 20px;
+}
+
+#nav{
+    color: rgb(0, 183, 255);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.login-card p {
+  margin-bottom: 20px;
+  font-weight: bolder;
+  color: #2e2e2e;
+}
+
+label{
+    align-self: flex-start;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+span{
+    font-weight: bolder;
+}
+
+#great{
+    font-size: x-large;
+}
+
+/* Inputs */
+.input-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,0.6);
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #0b5c6b, #0f7c8c);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #084d59;
+}
+
+/* Divider */
+.divider {
+  margin: 20px 0;
+  color: #777;
+  font-size: 14px;
+}
+
+/* Social Buttons */
+.social {
+  display: flex;
+  gap: 10px;
+}
+
+.social button {
+  flex: 1;
+  background: white;
+  color: black;
+  border: 1px solid #ddd;
+}
+
+/* Signup */
+.signup {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .login-card {
+    max-width: 400px;
+    padding: 35px;
+  }
+
+  body{
+      background: url('http://localhost/projects/TaskApp/public/image/mbgImage.png') no-repeat center center;
+      background-size: cover;
+  }
+}
