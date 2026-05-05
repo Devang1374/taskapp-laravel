@@ -16,6 +16,7 @@
 
    
     async function getUserProfile() {
+      showLoader();
       try {
         const res = await fetch(BASE_URL + '/task/user', {
           method: "GET",
@@ -40,9 +41,11 @@
       } catch (err) {
         console.error("Failed to fetch user profile:", err);
       }
+      showLoader();
     }
 
     async function createTask() {
+      showLoader();
       const titleEl = document.getElementById("title");
       const title   = titleEl.value.trim();
       if (!title) return;
@@ -61,10 +64,12 @@
         alert("Failed to create task.");
         console.error(err);
       }
+      hideLoader();
     }
 
 
     async function getTasks() {
+      showLoader();
       if (!localStorage.getItem("token")) {
         window.location.href = "index.html";
         return;
@@ -85,6 +90,7 @@
       } finally {
         spinIcon.style.animation = '';
       }
+      hideLoader();
     }
 
     function renderTasks(tasks) {
@@ -122,6 +128,7 @@
     }
 
     async function completeTask(id) {
+      showLoader();
       try {
         await fetch(BASE_URL + '/task/' + id, {
           method:  "POST",
@@ -131,6 +138,7 @@
       } catch (err) {
         console.error("Failed to mark task complete:", err);
       }
+      hideLoader();
     }
 
     function openEditModal(id, currentTitle) {
@@ -147,6 +155,7 @@
     }
 
     async function saveEdit() {
+      showLoader();
       const newTitle = document.getElementById('edit-title-input').value.trim();
       if (!newTitle) { alert("Title cannot be empty."); return; }
 
@@ -165,9 +174,11 @@
         alert("Failed to update task.");
         console.error(err);
       }
+      hideLoader();
     }
 
     async function deleteTask(id) {
+      showLoader();
       if (!confirm("Delete this task?")) return;
 
       try {
@@ -182,6 +193,7 @@
         alert("Failed to delete task.");
         console.error(err);
       }
+      hideLoader();
     }
 
     function logout() {
@@ -196,3 +208,11 @@
     function escapeAttr(str) {
       return str.replace(/'/g, "\\'").replace(/"/g, '&quot;');
     }
+
+function showLoader() {
+  document.getElementById("loader").style.display = "flex";
+}
+
+function hideLoader() {
+  document.getElementById("loader").style.display = "none";
+}
