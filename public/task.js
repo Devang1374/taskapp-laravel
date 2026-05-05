@@ -43,6 +43,7 @@
 
         // Update the avatar div
         document.getElementById('avatar').innerText = initials;
+        document.getElementById('dash-greeting').innerHTML = fullName;
       } catch (err) {
         console.error("Failed to fetch user profile:", err);
       }
@@ -175,7 +176,7 @@
           body:    JSON.stringify({ title: newTitle })
         });
         const data = await res.json();
-        alert(data.message);
+        // alert(data.message);
         document.getElementById('edit-modal').classList.remove('open');
         editingTaskId = null;
         getTasks();
@@ -185,9 +186,6 @@
       }
     }
 
-    /* ═══════════════════════════════════════════
-       DELETE — DELETE /api/task/:id
-    ═══════════════════════════════════════════ */
     async function deleteTask(id) {
       if (!confirm("Delete this task?")) return;
 
