@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task App Login</title>
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="login-card">
+            <h1>TaskFlow</h1>
+            <p id="great">Welcome To TaskFlow</p>
+
+            <div class="input-form">
+                <div class="input-group">
+                    <label for="email"><span>Email Address</span></label>
+                    <input type="email" id="email" placeholder="yourname@example.com">
+                </div>
+
+                <div class="input-group">
+                    <label for="password"><span>Password</span><a  href="#">show/hide password</a></label>
+                    <input type="password" id="password" placeholder="Password">
+                    <label for="password"><span></span><a href="#" style="margin-top: 5px;">Forgot password?</a></label>
+                </div>
+
+                <button onclick="login()">Login</button>
+            </div>
+                <div class="divider">Or</div>
+                <p>New To TaskFlow? <a id="nav" href="register.html">Sign up here.</a></p>
+        </div>
+    </div>
+    <script src="auth.js"></script>
+</body>
+</html>

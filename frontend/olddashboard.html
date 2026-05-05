@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DashBoard Page</title>
+</head>
+<body>
+    <h2>DashBoard</h2>
+
+    <button onclick="logout()">LogOut</button>
+
+    <h3>Create Tasks</h3>
+    <input type="text" id="title" placeholder="Enter Task Title...">
+    <button onclick="createTask()">Add</button>
+
+    <h3>Your Tasks</h3>
+    <button onclick="getTasks()">Refresh</button>
+    <ul id="tasklist"></ul>
+
+    <script src="task.js"></script>
+</body>
+</html>

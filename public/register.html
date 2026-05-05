@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task App Register</title>
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="login-card">
+            <h1>TaskFlow</h1>
+            <p id="great">Welcome To TaskFlow</p>
+
+            <div class="input-form">
+                 <div class="input-group">
+                    <label for="name"><span>User Name</span></label>
+                    <input type="text" id="name" placeholder="User_name">
+                </div>
+
+                <div class="input-group">
+                    <label for="email"><span>Email Address</span></label>
+                    <input type="email" id="email" placeholder="yourname@example.com">
+                </div>
+
+                <div class="input-group">
+                    <label for="password"><span>Password</span><a style="color: #087083; font-weight:500; font-size: 15px;" href="#">show/hide password</a></label>
+                    <input type="password" id="password" placeholder="Password">
+                </div>
+
+                <button onclick="register()">Register</button>
+            </div>
+                <div class="divider">Or</div>
+                <p>Already have account? <a id="nav" href="index.html">Login here.</a></p>
+        </div>
+    </div>
+    <script src="auth.js"></script>
+</body>
+</html>
